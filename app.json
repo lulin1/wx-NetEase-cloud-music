@@ -1,25 +1,46 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/account/account",
+    "pages/now/now"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "野球帝",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "black",
-    "selectedColor": "#a7a7a7",
+    "color": "#a7a7a7",
+    "selectedColor": "#fff",
+    "backgroundColor": "#000000",
+    "position": "bottom",
     "list": [
       {
+        "iconPath": "./images/find.png",
+        "selectedIconPath": "./images/find1.png",
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "发现音乐"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "iconPath": "./images/my.png",
+        "selectedIconPath": "./images/my1.png",
+        "pagePath": "pages/my/my",
+        "text": "我的音乐"
+      },
+      {
+        "iconPath": "./images/now.png",
+        "selectedIconPath": "./images/now1.png",
+        "pagePath": "pages/now/now",
+        "text": "正在播放"
+      },
+      {
+        "iconPath": "./images/account.png",
+        "selectedIconPath": "./images/account1.png",
+        "pagePath": "pages/account/account",
+        "text": "正在播放"
       }
     ]
   }
