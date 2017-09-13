@@ -94,18 +94,20 @@ Page({
     if (!res.searchSongs.result) {
       return;
     }
-    res.searchSongs.result.songs.forEach((song, index) => {
-      temp.push({
-        id: song.id,
-        name: song.name,
-        mp3Url: song.mp3Url,
-        picUrl: song.album.picUrl,
-        singer: song.artists[0].name
+    res.searchSongs.result.forEach((Songs, index) => {
+      Songs.songs.forEach((song, index) => {
+        temp.push({
+          id: song.id,
+          name: song.name,
+          mp3Url: song.mp3Url,
+          picUrl: song.album.picUrl,
+          singer: song.artists[0].name
+        })
+        that.setData({
+          searchReault: temp
+        })
       })
-      that.setData({
-        searchReault: temp
-      })
-    })
+    }) 
   },
   onShow: function () {
     wx.hideLoading()
@@ -122,15 +124,9 @@ Page({
   },
   toggleNavBar: function (e) {
     this.setData({
-      activeIndex: e.currentTarget.id
+      activeIndex: e.currentTarget.id,
+      sliderOffset: e.currentTarget.offsetLeft
     })
-  },
-  tabClick: function (e) {
-    // console.log(e.currentTarget.id)
-    this.setData({
-      sliderOffset: e.currentTarget.offsetLeft,
-      activeIndex: e.currentTarget.id
-    });
   },
   tonow: function (event) {
     let songData = {
@@ -143,7 +139,7 @@ Page({
     // 将当前点击的歌曲保存在缓存中
     wx.setStorageSync('clickdata', songData)
     wx.switchTab({
-      url: '../now/index'
+      url: '../now/now'
     })
   }
 });

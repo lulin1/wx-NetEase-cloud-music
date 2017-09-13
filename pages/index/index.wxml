@@ -20,21 +20,28 @@
             <!--取消按钮-->
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
-        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
+        <view class="searchbar-result" style="overflow-y: scroll;">
+          <view class="weui-cells" wx:if="{{inputVal.length > 0}}" style="overflow-y: scroll;" >
+            <block wx:for="{{searchReault}}" wx:key="item" style="overflow-y: scroll;">
+              <navigator url="../now/now" class="weui-cell" hover-class="weui-cell_active" open-type="switchTab" bindtap='tonow'>
+                  <view class="weui-cell__bd">
+                      <view class='song-name'>{{item.name}}
+                        <text class='song-singer'>{{item.singer}}</text>
+                      </view>
+                  </view>
+              </navigator>
+            </block>
+          </view>
         </view>
         
-       
-
+      <view class='other-content' hidden='{{inputVal.length > 0}}'>
         <view class="weui-tab">
           <view class="weui-navbar">
             <block wx:for="{{tabs}}" wx:key="this">
               <view id='{{index}}' class="weui-navbar__item {{ activeIndex == index ? 'weui-bar__item_on':'' }}" bindtap='toggleNavBar'>
                   <view class="weui-navbar__title">{{item}}</view>
+              </view>
+              <view class='weui-navbar__slider' style='left: {{sliderLeft}}px; transform:translateX({{sliderOffset}}px)'>
               </view>
             </block>
           </view>
@@ -43,7 +50,9 @@
               <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
               <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
           </view>
-</view>
+        </view>
+      </view>
+        
 
         
 </view>

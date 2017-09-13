@@ -42,3 +42,13 @@
   height: 40px;
   margin: 5px auto;
 }
+
+.song-name{
+  color: #507daf;
+  font-size: 18px;
+}
+
+.song-singer{
+  color: #888888;
+  font-size: 12px;
+}
