@@ -1,10 +1,16 @@
 /**app.wxss**/
+@import 'style/weui.wxss';
 .container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+ width: 100%;
   box-sizing: border-box;
+  font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 } 
+.searchbar-result{
+  position: fixed;
+  left: 0;
+  top: 26px;
+  width: 100%;
+
+}
