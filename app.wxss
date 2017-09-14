@@ -12,5 +12,7 @@
   left: 0;
   top: 26px;
   width: 100%;
-
+}
+.weui-grids navigator{
+  border-right: none;
 }
