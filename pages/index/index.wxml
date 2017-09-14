@@ -79,15 +79,15 @@
                 <view class='list-content'>
                   <navigator url='../my/my' class='grid' hover-class='weui-grid_active'>
                     <image src='http://p1.music.126.net/GzC0QJKZc9tQp53GzhafBg==/19073228207135019.jpg?param=140y140' class='list-content-image' />
-                    <view class='list-content-text'>aa一首歌证明你是..</view>
+                    <view class='list-content-text'>一首歌证明你..</view>
                   </navigator>
                   <navigator url='../my/my' class='grid' hover-class='weui-grid_active'>
                     <image src='http://p1.music.126.net/4L--5jGuNNCdRxL10n_0-g==/19057835044326350.jpg?param=140y140' class='list-content-image' />
-                    <view class='list-content-text'>华语白sss首| 回忆伤</view>
+                    <view class='list-content-text'>华语白首|回忆</view>
                   </navigator>
                   <navigator url='../my/my' class='grid' hover-class='weui-grid_active'>
                     <image src='http://p1.music.126.net/XV6WbcLmt3QwHytlDVTASA==/6017627139284599.jpg?param=140y140' class='list-content-image' />
-                    <view class='list-content-text'>钢琴的轻dddssss吟</view>
+                    <view class='list-content-text'>钢琴的轻吟</view>
                   </navigator>
                   <navigator url='../my/my' class='grid' hover-class='weui-grid_active'>
                     <image src='http://p1.music.126.net/n6IZQhyzUU88gKDhbBNfcw==/18977570695447756.jpg?param=140y140' class='list-content-image' />

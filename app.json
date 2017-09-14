@@ -40,7 +40,7 @@
         "iconPath": "./images/account.png",
         "selectedIconPath": "./images/account1.png",
         "pagePath": "pages/account/account",
-        "text": "正在播放"
+        "text": "账号"
       }
     ]
   }
