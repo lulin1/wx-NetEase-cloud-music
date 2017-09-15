@@ -8,9 +8,10 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#D43C33",
     "navigationBarTitleText": "野球帝",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FBFCFD"
   },
   "tabBar": {
     "color": "#a7a7a7",

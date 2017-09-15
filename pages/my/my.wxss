@@ -1,1 +1,46 @@
 /* pages/my/my.wxss */
+.bg-img {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.weui-cell::before {
+  left: 60px;
+}
+
+.weui-cell__bd {
+  margin-left: 15px;
+}
+
+.my-songs-list-title {
+  background-color:#eeeff0;
+  padding:5px 15px;
+  color:#888;
+}
+
+.list-content .bg-img {
+  width: 50px;
+  height: 50px;
+}
+
+.list-content .wrapper {
+  padding-left: 15px;
+}
+
+.count {
+  color: #999999;
+}
+
+.list-content .weui-cell::before {
+  left: 80px;
+}
+
+.weui-cells::before {
+  border-top: none;
+}
+
+.weui-cells::after {
+  border-bottom: none;
+}
