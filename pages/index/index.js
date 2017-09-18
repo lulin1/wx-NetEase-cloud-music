@@ -1,8 +1,8 @@
 //index.js
 //获取应用实例
-var Mock = require('../../mock-min.js')
-import * as res from '../../mock-data.js';
-console.log(res.searchSongs.result)
+// var Mock = require('../../mock-min.js')
+// import * as res from '../../mock-data.js';
+// console.log(res.searchSongs.result)
 var app = getApp()
 
 Page({
@@ -49,65 +49,65 @@ Page({
       inputVal: e.detail.value
     });
     // let url = `http://localhost:3000/search?keywords=${e.detail.value}`
-    // wx.request({
-    //     url: 'http://neteasemusic.leanapp.cn/search',
-    //     data: {
-    //         keywords: e.detail.value
-    //     },
-    //     method: 'GET',
-    //     success: function (res) {
-    //         let temp = []
-    //         if(!res.data.result.songs){
-    //             return ;
-    //         }
-    //         res.data.result.songs.forEach((song, index) => {
+    wx.request({
+        url: 'https://neteasemusic.leanapp.cn/search',
+        data: {
+            keywords: e.detail.value
+        },
+        method: 'GET',
+        success: function (res) {
+            let temp = []
+            if(!res.data.result.songs){
+                return ;
+            }
+            res.data.result.songs.forEach((song, index) => {
 
-    //             temp.push({
-    //                 id: song.id,
-    //                 name: song.name,
-    //                 mp3Url: song.mp3Url,
-    //                 picUrl: song.album.picUrl,
-    //                 singer: song.artists[0].name
-    //             })
-    //             that.setData({
-    //                 searchReault: temp
-    //             })
+                temp.push({
+                    id: song.id,
+                    name: song.name,
+                    mp3Url: song.mp3Url,
+                    picUrl: song.album.picUrl,
+                    singer: song.artists[0].name
+                })
+                that.setData({
+                    searchReault: temp
+                })
 
 
-    //         })
-    //         // 存入搜索的结果进缓存
-    //         wx.setStorage({
-    //             key:"searchReault",
-    //             data:temp
-    //         })
-    //     },
-    //     fail: function (res) {
-    //         // fail
-    //     },
-    //     complete: function (res) {
-    //         // complete
+            })
+            // 存入搜索的结果进缓存
+            wx.setStorage({
+                key:"searchReault",
+                data:temp
+            })
+        },
+        fail: function (res) {
+            // fail
+        },
+        complete: function (res) {
+            // complete
 
-    //     }
-    // })
+        }
+    })
 
-    let temp = []
-    if (!res.searchSongs.result) {
-      return;
-    }
-    res.searchSongs.result.forEach((Songs, index) => {
-      Songs.songs.forEach((song, index) => {
-        temp.push({
-          id: song.id,
-          name: song.name,
-          mp3Url: song.mp3Url,
-          picUrl: song.album.picUrl,
-          singer: song.artists[0].name
-        })
-        that.setData({
-          searchReault: temp
-        })
-      })
-    }) 
+    // let temp = []
+    // if (!res.searchSongs.result) {
+    //   return;
+    // }
+    // res.searchSongs.result.forEach((Songs, index) => {
+    //   Songs.songs.forEach((song, index) => {
+    //     temp.push({
+    //       id: song.id,
+    //       name: song.name,
+    //       mp3Url: song.mp3Url,
+    //       picUrl: song.album.picUrl,
+    //       singer: song.artists[0].name
+    //     })
+    //     that.setData({
+    //       searchReault: temp
+    //     })
+    //   })
+    // }) 
   },
   onShow: function () {
     wx.hideLoading()
