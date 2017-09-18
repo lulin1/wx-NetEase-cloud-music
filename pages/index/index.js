@@ -61,7 +61,6 @@ Page({
                 return ;
             }
             res.data.result.songs.forEach((song, index) => {
-
                 temp.push({
                     id: song.id,
                     name: song.name,
@@ -72,8 +71,6 @@ Page({
                 that.setData({
                     searchReault: temp
                 })
-
-
             })
             // 存入搜索的结果进缓存
             wx.setStorage({

@@ -1,2 +1,10 @@
 <!--pages/now/now.wxml-->
-<text>{{page}}.wxml</text>
+<view class='container'>
+  <view class='bg' style='background-image: url({{poster}})'>
+  </view>
+  <view class='content-box'>
+    <view class='cover-box'>
+      <view class='cover-info' style='background-image: url({{poster}})'></view>
+    </view>
+  </view>
+</view>
