@@ -3,8 +3,17 @@
   <view class='bg' style='background-image: url({{poster}})'>
   </view>
   <view class='content-box'>
-    <view class='cover-box'>
+    <!--封面圆圈-->
+    <view class='cover-box' hidden='{{!isLyric}}' bindtap='showLyric'>
       <view class='cover-info' style='background-image: url({{poster}})'></view>
+    </view>
+    <!--歌词-->
+    <view class='lyric-box' hidden='{{isLyric}}' bindtap='showCover'>
+      <view class='lyric-info'>
+        <block wx:for='{{lyricArr}}'>
+          <view>{{item}}</view>
+        </block>
+      </view>
     </view>
   </view>
 </view>

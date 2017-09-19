@@ -33,3 +33,12 @@
     transform: rotate(360deg)
   }
 }
+
+.lyric-box {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.lyric-info {
+  overflow-y: scroll;
+}

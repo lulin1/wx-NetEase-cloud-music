@@ -1,13 +1,30 @@
 // pages/now/now.js
+var Common = require('../../common')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    poster: "http://p1.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg"
+    poster: "http://p1.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
+    isLyric: false,
+    lyricArr: []
   },
 
+  showLyric: function () {
+    console.log('isLyric is :',this.data.isLyric)
+    this.setData({
+      isLyric: true
+    })
+    console.log('isLyric is :', this.data.isLyric)
+  },
+  showCover: function () {
+    console.log('isLyric is :', this.data.isLyric)
+    this.setData({
+      isLyric: false
+    })
+    console.log('isLyric is :', this.data.isLyric)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -28,7 +45,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    let that = this;
+    Common.asyncGetStorage('clickdata')//本地缓存
+      .then(data => {
+        console.log('clickdata is :', data);
+        if(!data) return;
+        that.setData({
+          id: data.id,
+          name: data.name,
+          src: data.mp3Url,
+          poster: data.picUrl,
+          author: data.singer
+        })
+        return Common.playMusic(data.mp3Url, data.name, data.picUrl)
+      })
+      .then(status => {
+        if(!status) return;
+        console.log('id:',that.data.id)
+        return Common.getLyric(that.data.id)
+      })
+      .then(lyricArr => {
+        if(!lyricArr) return;
+        console.log('lyricArr is :',lyricArr)
+        that.setData({
+          lyricArr: lyricArr
+        })
+      })
   },
 
   /**

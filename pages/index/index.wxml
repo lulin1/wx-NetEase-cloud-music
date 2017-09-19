@@ -23,7 +23,7 @@
   <view class="searchbar-result" style="overflow-y: scroll;">
     <view class="weui-cells" wx:if="{{inputVal.length > 0}}" style="overflow-y: scroll;" >
       <block wx:for="{{searchReault}}" wx:key="item" style="overflow-y: scroll;">
-        <navigator url="../now/now" class="weui-cell" hover-class="weui-cell_active" open-type="switchTab" bindtap='tonow'>
+        <navigator url="../now/now" class="weui-cell" hover-class="weui-cell_active" data-id='{{item.id}}' data-name='{{item.name}}' data-songUrl='{{item.mp3Url}}' data-picUrl='{{item.picUrl}}' data-singer='{{item.singer}}' open-type="switchTab" bindtap='tonow'>
             <view class="weui-cell__bd">
                 <view class='song-name'>{{item.name}}
                   <text class='song-singer'>{{item.singer}}</text>

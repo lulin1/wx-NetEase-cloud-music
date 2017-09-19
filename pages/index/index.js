@@ -133,6 +133,7 @@ Page({
       picUrl: event.currentTarget.dataset.picurl,
       singer: event.currentTarget.dataset.singer
     }
+    console.log('id is : ' + event.currentTarget.dataset.id)
     // 将当前点击的歌曲保存在缓存中
     wx.setStorageSync('clickdata', songData)
     wx.switchTab({
