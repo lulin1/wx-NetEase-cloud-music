@@ -8,11 +8,23 @@
       <view class='cover-info' style='background-image: url({{poster}})'></view>
     </view>
     <!--歌词-->
-    <view class='lyric-box' hidden='{{isLyric}}' bindtap='showCover'>
+     <view class='lyric-box' hidden='{{isLyric}}' bindtap='showCover'>
       <view class='lyric-info'>
         <block wx:for='{{lyricArr}}'>
           <view>{{item}}</view>
         </block>
+      </view>
+    </view> 
+    <!--Icon choose-->
+    <view class='choose-box'>
+      <view class='choose-download icon'></view>
+      <view class='choose-like icon'></view>
+      <view class='choose-add icon'></view>
+    </view>
+    <!--滑动条Slider-->
+    <view class="section section_gap">
+      <view class="body-view">
+        <slider bindchange="slider3change" show-value/>
       </view>
     </view>
   </view>
