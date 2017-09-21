@@ -81,3 +81,33 @@
 .choose-add {
   background-image: url(http://op4j4esv2.bkt.clouddn.com/add.png)
 }
+
+.operations {
+  display: flex;
+  justify-content: center;
+}
+
+.operations-btn {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  margin: 10px;
+}
+
+.operations-pre {
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/pre.png) ;
+}
+
+.operations-play,.operations-pause {
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/play.png) ;
+  width: 50px;
+  height: 50px;
+}
+
+.operations-pause {
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/pause.png) ;
+}
+
+.operations-next {
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/next.png) ;
+}

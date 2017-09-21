@@ -7,6 +7,7 @@ const func = {
         coverImgUrl: pic,
         success: function () {
           resolve(true);
+          console.log('yessss');
         },
         fail: function () {
           reject(new Error('播放错误~~'));
