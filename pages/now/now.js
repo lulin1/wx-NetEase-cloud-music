@@ -8,7 +8,9 @@ Page({
   data: {
     poster: "http://p1.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
     isLyric: false,
-    lyricArr: []
+    lyricArr: [],
+    isPlaying: true,
+    dataUrl: ''
   },
 
   showLyric: function () {
@@ -24,6 +26,31 @@ Page({
       isLyric: true
     })
     console.log('isLyric is :', this.data.isLyric)
+  },
+  play: function () {
+    wx.getBackgroundAudioPlayerState({
+      success: function (res) {
+        var status = res.status
+        var dataUrl = res.dataUrl
+        var currentPosition = res.currentPosition
+        var duration = res.duration
+        var downloadPercent = res.downloadPercent
+        wx.playBackgroundAudio({
+          dataUrl: dataUrl
+        })
+        console.log('res is:', res)
+      }
+    })
+    
+    this.setData({
+      isPlaying: true
+    })
+  },
+  pause: function () {
+    wx.pauseBackgroundAudio();
+    this.setData({
+      isPlaying: false
+    })
   },
   /**
    * 生命周期函数--监听页面加载

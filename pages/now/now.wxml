@@ -30,8 +30,8 @@
     <!--上一曲、下一曲、播放、暂停-->
     <view class='operations'>
       <view class='operations-pre operations-btn'></view>
-      <view class='operations-play operations-btn'></view>
-      <view class='operations-pause operations-btn'></view>
+      <view class='operations-play operations-btn' hidden='{{isPlaying}}' bindtap='play'></view>
+      <view class='operations-pause operations-btn' hidden='{{!isPlaying}}' bindtap='pause'></view>
       <view class='operations-next operations-btn'></view>
     </view>
   </view>
