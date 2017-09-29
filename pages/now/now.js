@@ -53,10 +53,39 @@ Page({
     })
   },
   prev: function () {
+    const id = this.data.id;
+    console.log('id :',id)
+    var that = this;
     wx.getStorage({
       key: 'searchResult',
       success: function(res) {
         console.log('search result : ',res.data)
+        var currentId = res.data.findIndex((item) => {
+          return item.id == id;
+        })
+        console.log('currentId :',currentId)
+        console.log('currentId info:', res.data[currentId])
+        currentId --;
+        console.log('currentId-- :', currentId)
+        console.log('currentId-- info:', res.data[currentId])
+        wx.playBackgroundAudio({
+          dataUrl: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46',
+          title: res.data[currentId].name,
+          coverImgUrl: res.data[currentId].picUrl
+        })
+        that.setData({
+          id: res.data[currentId].id,
+          name: res.data[currentId].name,
+          poster: res.data[currentId].picUrl,
+          author: res.data[currentId].singer
+        })
+        Common.getLyric(that.data.id)
+          .then((res) => {
+            console.log('res ::',res)
+            that.setData({
+              lyricArr: res
+            })
+          })
       },
       fail: function(err) {
         console.log(err)
