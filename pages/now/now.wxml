@@ -32,7 +32,7 @@
       <view class='operations-pre operations-btn' bindtap='prev'></view>
       <view class='operations-play operations-btn' hidden='{{isPlaying}}' bindtap='play'></view>
       <view class='operations-pause operations-btn' hidden='{{!isPlaying}}' bindtap='pause'></view>
-      <view class='operations-next operations-btn'></view>
+      <view class='operations-next operations-btn' bindtap='next'></view>
     </view>
   </view>
 </view>
