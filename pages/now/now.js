@@ -53,11 +53,13 @@ Page({
     })
   },
   prev: function () {
-    console.log(22)
     wx.getStorage({
       key: 'searchResult',
       success: function(res) {
-        console.log(res)
+        console.log('search result : ',res.data)
+      },
+      fail: function(err) {
+        console.log(err)
       }
     })
   },

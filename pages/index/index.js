@@ -24,7 +24,7 @@ Page({
     duration: 1000,
     circular: true,
     //   歌曲搜索的结果
-    searchReault: []
+    searchResult: []
   },
   showInput: function () {
     this.setData({
@@ -69,14 +69,16 @@ Page({
                     singer: song.artists[0].name
                 })
                 that.setData({
-                    searchReault: temp
+                    searchResult: temp
                 })
             })
-            // 存入搜索的结果进缓存
+            // 将搜索的结果存进缓存
             wx.setStorage({
-                key:"searchReault",
-                data:temp
+                key: "searchResult", 
+                data: temp
             })
+            console.log('res is:', res)
+            console.log('temp is: ',temp)
         },
         fail: function (res) {
             // fail
@@ -101,7 +103,7 @@ Page({
     //       singer: song.artists[0].name
     //     })
     //     that.setData({
-    //       searchReault: temp
+    //       searchResult: temp
     //     })
     //   })
     // }) 
