@@ -1,1 +1,23 @@
 /* pages/account/account.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.account-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+.address-info {
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 30px;
+  color: gainsboro;
+}
+.address-info-from {
+  margin-right: 15px;
+}

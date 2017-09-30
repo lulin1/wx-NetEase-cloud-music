@@ -14,18 +14,14 @@ Page({
   },
 
   showLyric: function () {
-    console.log('isLyric is :',this.data.isLyric)
     this.setData({
       isLyric: false
     })
-    console.log('isLyric is :', this.data.isLyric)
   },
   showCover: function () {
-    console.log('isLyric is :', this.data.isLyric)
     this.setData({
       isLyric: true
     })
-    console.log('isLyric is :', this.data.isLyric)
   },
   play: function () {
     wx.getBackgroundAudioPlayerState({

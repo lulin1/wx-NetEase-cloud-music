@@ -85,12 +85,13 @@
 .operations {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
 }
 
 .operations-btn {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-size: cover;
   margin: 10px;
 }
@@ -106,6 +107,8 @@
 }
 
 .operations-pause {
+  width: 50px;
+  height: 50px;
   background-image:url(http://op4j4esv2.bkt.clouddn.com/pause.png) ;
 }
 

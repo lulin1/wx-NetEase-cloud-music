@@ -1,2 +1,11 @@
 <!--pages/account/account.wxml-->
-<text>{{page}}.wxml</text>
+<view class='container'>
+  <image src='{{userInfo.avatarUrl}}' class='account-img'></image>
+  <text class='account-name'>{{userInfo.nickName}}</text>
+  <view class='address-info'>
+    <text class='address-info-from'>From :</text>
+    <text class='address-info-detail'>{{userInfo.country}}_</text>
+    <text>{{userInfo.province}}_</text>
+    <text>{{userInfo.city}}</text>
+  </view>
+</view>
