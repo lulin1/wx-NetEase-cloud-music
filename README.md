@@ -1,6 +1,6 @@
 # wx-NetEase-cloud-music
 
-##　项目目录
+## 项目目录
 
 ```
 .
